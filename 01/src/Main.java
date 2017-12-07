@@ -3,6 +3,5 @@ class Main {
         File file = new File();
         Change change = new Change(file.readToArray());
         change.start();
-        //change.arrlenght();
     }
 }

@@ -17,15 +17,6 @@ public class Change {
         }
     }
 
-    void arrlenght() {
-        System.out.println(data.length);
-        System.out.println(i);
-        System.out.println(data[i]);
-        System.out.println(++i);
-        System.out.println(data[i]);
-    }
-
-
     boolean changePossible(String s1, String s2) {
         int i = 0;
         int count = 0;
