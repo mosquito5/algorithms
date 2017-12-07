@@ -22,6 +22,7 @@ public class File {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
         return lines.toArray(new String[lines.size()]);
     }
 }

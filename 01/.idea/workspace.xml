@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e22018a-a078-4994-b39b-6cfc839d9701" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Change.java" afterPath="$PROJECT_DIR$/src/Change.java" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/File.java" afterPath="$PROJECT_DIR$/src/File.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/File.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#274#282#0" expanded="true" />
@@ -71,9 +70,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/File.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Change.java" />
+        <option value="$PROJECT_DIR$/src/File.java" />
       </list>
     </option>
   </component>
@@ -260,12 +259,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512662650038</updated>
-      <workItem from="1512662653525" duration="9684000" />
+      <workItem from="1512662653525" duration="9823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9684000" />
+    <option name="totallyTimeSpent" value="9823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="26" width="1922" height="1055" extended-state="6" />
@@ -344,7 +343,7 @@
     <entry file="file://$PROJECT_DIR$/src/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#274#282#0" expanded="true" />
