@@ -8,10 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class File_lib {
+    private String name;
+
+    public File_lib(String name) {
+            this.name = name;
+    }
+
     public String[] readToArray() {
         List<String> lines = new ArrayList<String>();
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("input"));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(name));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 lines.add(line);

@@ -16,5 +16,10 @@ public class Sort_lib {
             System.out.println(a[i]);
         }
     }
-
+    public static boolean isSorted(Comparable[] input_data) {
+        for(int i = 1; i < input_data.length; i++)
+            if(less(input_data[i], input_data[i - 1]))
+                return true;
+        return false;
+    }
 }
