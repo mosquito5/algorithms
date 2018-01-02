@@ -1,11 +1,9 @@
 package chapter2.libs;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class File_lib {
     private String name;
@@ -13,6 +11,10 @@ public class File_lib {
     public File_lib(String name) {
             this.name = name;
     }
+
+    /**
+     * reading strings line by line to array
+     */
 
     public String[] readToArray() {
         List<String> lines = new ArrayList<String>();
@@ -33,5 +35,6 @@ public class File_lib {
 
         return lines.toArray(new String[lines.size()]);
     }
+
 }
 

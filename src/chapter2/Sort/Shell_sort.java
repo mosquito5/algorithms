@@ -15,7 +15,8 @@ public class Shell_sort {
             h = 3 * h + 1;
         while (h >= 1) {
             for (int i = h; i < input_data.length; i++) {
-                for (int j = i; j >= h && less(input_data[j], input_data[j - h]); j -= h)
+                for (int j = i; j >= h && less(Integer.parseInt(String.valueOf(input_data[j])) ,
+                        Integer.parseInt(String.valueOf(input_data[j - h])) ); j -= h)
                     exch(input_data, j, j - h);
             }
             h = h / 3;

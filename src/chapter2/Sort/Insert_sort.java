@@ -11,8 +11,9 @@ public class Insert_sort {
     }
 
     public void sort() {
-        for (int i = 0; i < input_data.length; i++) {
-            for (int j = i; j > 0 && less(input_data[j], input_data[j - 1]); j--)
+        for (int i = 1; i < input_data.length; i++) {
+            for (int j = i; j > 0 && less(Integer.parseInt(String.valueOf(input_data[j])),
+                    Integer.parseInt(String.valueOf(input_data[j - 1])) ); j--)
                 exch(input_data, j, j - 1);
 
             }
