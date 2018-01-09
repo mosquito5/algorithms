@@ -3,30 +3,19 @@ package chapter2.Sort;
 import chapter2.libs.File_lib;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Main {
     static File_lib file;
     static Comparable<String>[] data;
 
     public static void main(String[] args) {
-
-    /*Shell_sort shell_sort;
-    Insert_sort insert_sort;
-    Select_sort select_sort;*/
-
-    Scanner scanner = new Scanner(System.in);
-
-    byte select;
-
-    /*System.out.print("Type file name with extensions: ");
-    if(scanner.hasNext()) {*/
         file = new File_lib("input");
         data = file.readToArray();
 
-    //}
 
-    System.out.println("Choose type of sort.\n1-Insert sort\n2-Select sort\n3-Shell sort");
+
+    System.out.println("Choose type of sort.\n1-Insert sort\n2-Select sort\n3-Shell sort\n" +
+            "4-Merge sort");
 
         try {
             sort_algs((char) System.in.read());
@@ -53,9 +42,15 @@ public class Main {
                 Shell_sort shell_sort = new Shell_sort(data);
                 shell_sort.sort();
                 break;
-
+            case '4':
+                System.out.println("Merge sort");
+                Merge_sort merge_sort = new Merge_sort(data);
+                merge_sort.sort();
+                break;
             default:
                 System.out.println("Wrong select");
+
+
         }
 
     }

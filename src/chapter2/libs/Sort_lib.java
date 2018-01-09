@@ -12,9 +12,15 @@ public class Sort_lib {
     }
 
     public static void show(Comparable[] input) {
-        for(int i = 0; i < input.length; i++) {
+        for(int i = 0; i < input.length; i++)
             System.out.println(input[i]);
-        }
+
+    }
+
+    public static void show(int[] input) {
+        for(int i = 0; i < input.length; i++)
+            System.out.println(input[i]);
+
     }
     public static boolean isSorted(Comparable[] input_data) {
         for(int i = 1; i < input_data.length; i++)
