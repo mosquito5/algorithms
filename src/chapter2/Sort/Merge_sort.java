@@ -3,15 +3,15 @@ package chapter2.Sort;
 import static chapter2.libs.Sort_lib.*;
 
 public class Merge_sort {
-    private Comparable[] input_data;
-    private Comparable[] input_data_copy;
+    private int[] input_data;
+    private int[] input_data_copy;
     private int lo;
     private int hi;
 
-    Merge_sort(Comparable[] input_data) {
+    Merge_sort(int[] input_data) {
 
         this.input_data = input_data;
-        this.input_data_copy = new Comparable[input_data.length];
+        this.input_data_copy = new int[input_data.length];
         lo = 0;
         hi = input_data.length - 1;
 
@@ -46,8 +46,7 @@ public class Merge_sort {
                 input_data[k] = input_data_copy[j++];
             else if (j > hi)
                 input_data[k] = input_data_copy[lo++];
-            else if (less(Integer.parseInt(String.valueOf(input_data_copy[j])),
-                    Integer.parseInt(String.valueOf(input_data_copy[lo]))))
+            else if (less(input_data_copy[j], input_data_copy[lo]))
                 input_data[k] = input_data_copy[j++];
             else
                 input_data[k] = input_data_copy[lo++];
