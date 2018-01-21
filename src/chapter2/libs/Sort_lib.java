@@ -8,10 +8,21 @@ public class Sort_lib {
         return Integer.compare(a, b) > 0;
     }
 
+    private static boolean less(int[] input, int i, int j) {
+        return Integer.compare(input[i - 1], input[j - 1]) < 0;
+
+    }
+
     public static void exch(int[] input, int i, int j) {
         int temp = input[i];
         input[i] = input[j];
         input[j] = temp;
+    }
+
+    public static void exch2(int[] input, int i, int j) {
+        int temp = input[i-1];
+        input[i-1] = input[j-1];
+        input[j-1] = temp;
     }
 
 //    public static void show(Comparable[] input) {
@@ -48,4 +59,19 @@ public class Sort_lib {
         }
 
     }
+
+
+     public static void sink(int[] input, int k, int n) {
+         while (2*k <= n){
+             int j = 2*k;
+             if(j < n && less(input, j, j + 1))
+                 j++;
+             if(!less(input, k, j))
+                 break;
+             exch(input, --k, --j);
+             k++;
+             k = ++j;
+
+         }
+     }
 }

@@ -18,7 +18,7 @@ public class Main {
 
 
     System.out.println("Choose type of sort.\n1-Insert sort\n2-Select sort\n3-Shell sort\n" +
-            "4-Merge sort\n5-Quick sort");
+            "4-Merge sort\n5-Quick sort\n6-Heap sort");
 
         try {
             sort_algs((char) System.in.read());
@@ -55,6 +55,12 @@ public class Main {
                 Quick_sort quick_sort = new Quick_sort(data);
                 quick_sort.sort();
                 break;
+            case '6':
+                System.out.println("Heap sort");
+                Heap_sort heap_sort = new Heap_sort(data);
+                heap_sort.sort();
+                break;
+
 
             default:
                 System.out.println("Wrong select");
