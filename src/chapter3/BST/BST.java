@@ -2,6 +2,7 @@ package chapter3.BST;
 
 
 public class BST<Key extends Comparable<Key>, Value> {
+
     private Node root;
 
     private class Node {
@@ -15,6 +16,7 @@ public class BST<Key extends Comparable<Key>, Value> {
             this.val = val;
             this.N = N;
         }
+    }
 
         public int size() {
             return size(root);
@@ -191,6 +193,16 @@ public class BST<Key extends Comparable<Key>, Value> {
                 keys(x.right, queue, lo, hi);
         }
 
-    }
+        public int height() {
+            return height(root);
+        }
+
+        private int height(Node x) {
+            if(x == null)
+                return -1;
+            return 1 + Math.max(height(x.left), height(x.right));
+        }
+
+
 
 }
