@@ -8,16 +8,8 @@ public class Main {
 
         BST<String, Integer> bst = new BST<String, Integer>();
 
-
-
         Read(bst);
 
-        /*bst.put("D", 1);
-        bst.put("C", 2);
-        bst.put("e", 3);
-        bst.put("f", 4);
-        bst.put("h", 5);
-        bst.put("j", 6);*/
         try {
             for (String s : bst.keys())
                 System.out.println(s + " " + bst.get(s));
