@@ -1,17 +1,19 @@
 package chapter3.Hash;
 
-public class LinerarProbingHaszST<Key, Value> {
+import chapter3.BST.Queue;
+
+public class LinerarProbingHashST<Key, Value> {
     private int N;          //liczba par klucz-wartosc w tablicy.
     private int size = 16;  // Rozmoar tablicy z probkowaniem liniowym.
     private Key[] keys;     // klucze
     private Value[] vals;   //wartosci
 
-    public LinerarProbingHaszST() {
+    public LinerarProbingHashST() {
         keys = (Key[]) new Object[size];
         vals = (Value[]) new Object[size];
     }
 
-    public LinerarProbingHaszST(int cap) {
+    public LinerarProbingHashST(int cap) {
         size = cap;
         keys = (Key[]) new Object[size];
         vals = (Value[]) new Object[size];
@@ -22,8 +24,8 @@ public class LinerarProbingHaszST<Key, Value> {
     }
 
     private void resize(int cap) {
-        LinerarProbingHaszST<Key, Value> t;
-        t = new LinerarProbingHaszST<Key, Value>(cap);
+        LinerarProbingHashST<Key, Value> t;
+        t = new LinerarProbingHashST<Key, Value>(cap);
         for (int i = 0; i < size; i++)
             if (keys[i] != null)
                 t.put(keys[i], vals[i]);
@@ -33,7 +35,7 @@ public class LinerarProbingHaszST<Key, Value> {
 
     }
 
-    private void put(Key key, Value value) {
+    public void put(Key key, Value value) {
         if(N >= size/2)
             resize(2*size); //podwajanie size
         int i;
@@ -44,7 +46,7 @@ public class LinerarProbingHaszST<Key, Value> {
         }
         keys[i] = key;
         vals[i] = value;
-        size++;
+        N++;
     }
 
     public Value get(Key key) {
@@ -52,5 +54,14 @@ public class LinerarProbingHaszST<Key, Value> {
             if(keys[i].equals(key))
                 return vals[i];
         return null;
+    }
+
+    public Iterable<Key> keys(){
+        Queue<Key> queue = new Queue<Key>();
+        for(int i = 0; i < size; i++)
+            if(keys[i] != null)
+                queue.enqueue(keys[i]);
+
+        return queue;
     }
 }
