@@ -6,11 +6,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class File_lib {
+
     private String name;
+
 
     public File_lib(String name) {
 
-        this.name = name;
+
+        this.name   = name;
+
     }
 
     /**
@@ -65,7 +69,6 @@ public class File_lib {
             System.out.println("File not found");
         }
         return null;
-
     }
 
 }
