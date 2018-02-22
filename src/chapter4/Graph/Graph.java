@@ -53,23 +53,34 @@ public class Graph implements InterfaceGraph {
 
     }
 
-    /*@Override
-    public Bag<Integer> adj(int v) {
-        return adj[v];
-    }*/
-
     @Override
     public Bag<Integer> adj(int v) {
         return adj[v];
     }
 
 
-
     public static void main(String[] args) {
         File_lib file = new File_lib("./data/tinyG.txt");
         Graph g = new Graph(file.getScanner());
         //TestSearch
-        Search search
+        Scanner keyboard = new Scanner(System.in);
+        int source = keyboard.nextInt();
+        Search search = new Search(g, source);
+
+        for(int v = 0; v < g.V(); v++) {
+            if(search.hasPathTo(v)) {
+                System.out.println(source + " " +  v + " " + search.distTo(v));
+                for (int x : search.pathTo(v)) {
+                    if(x == source)
+                        System.out.println(x);
+                    else
+                        System.out.println("-" + x);
+                }
+                System.out.println();
+            }
+            else
+                System.out.println(source + " to " + v + " not connected");
+        }
 
     }
 }
