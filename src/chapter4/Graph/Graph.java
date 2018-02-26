@@ -62,9 +62,67 @@ public class Graph implements InterfaceGraph {
     public static void main(String[] args) {
         File_lib file = new File_lib("./data/tinyG.txt");
         Graph g = new Graph(file.getScanner());
-        //TestSearch
-        Scanner keyboard = new Scanner(System.in);
-        int source = keyboard.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        int source = scanner.nextInt();
+
+        Testsearch(g, source);
+
+        TestBreadthFirstPaths(g, source);
+
+        TestDeepFisrtPaths(g, source);
+
+        scanner.close();
+
+
+    }
+
+    static void TestDeepFisrtPaths(Graph g, int source) {
+        //Scanner keyboard    = new Scanner(System.in);
+        //int source          = keyboard.nextInt();
+        DeepFisrtPaths dfp  = new DeepFisrtPaths(g, source);
+
+        for(int v = 0; v < g.V(); v++) {
+            if(dfp.hasPathTo(v)) {
+                System.out.println("soruce: " + source + " " + "number of edges " + v);
+                for (int x : dfp.pathTo(v)) {
+                    if(x == source)
+                        System.out.println(x);
+                    else
+                        System.out.println("-" + x);
+                }
+                System.out.println();
+            }
+            else
+                System.out.println(source + " to " + v + " not connected");
+        }
+        //keyboard.close();
+    }
+
+    static void TestBreadthFirstPaths(Graph g, int source) {
+        //Scanner keyboard = new Scanner(System.in);
+        //int source = keyboard.nextInt();
+        BreadthFirstPaths bfs = new BreadthFirstPaths(g, source);
+
+        for(int v = 0; v < g.V(); v++) {
+            if(bfs.hasPathTo(v)) {
+                System.out.println("soruce: " + source + " " + "number of edges " + v);
+                for (int x : bfs.pathTo(v)) {
+                    if(x == source)
+                        System.out.println(x);
+                    else
+                        System.out.println("-" + x);
+                }
+                System.out.println();
+            }
+            else
+                System.out.println(source + " to " + v + " not connected");
+        }
+    //keyboard.close();
+    }
+
+    static void Testsearch(Graph g, int source) {
+        //Scanner keyboard = new Scanner(System.in);
+        //int source = keyboard.nextInt();
         Search search = new Search(g, source);
 
         for(int v = 0; v < g.V(); v++) {
@@ -81,6 +139,7 @@ public class Graph implements InterfaceGraph {
             else
                 System.out.println(source + " to " + v + " not connected");
         }
-
+        //keyboard.close();
     }
+
 }

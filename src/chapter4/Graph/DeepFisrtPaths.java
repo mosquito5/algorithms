@@ -29,12 +29,13 @@ public class DeepFisrtPaths {
         return marked[source];
     }
 
-    public Iterable<Integer> pathTo(int source) {
-        if(!hasPathTo(source))
+    public Iterable<Integer> pathTo(int v) {
+        if (!hasPathTo(v))
             return null;
         Stack<Integer> path = new Stack<Integer>();
-        for(int i = source; i != this.source; i = edgeTo[source])
+        for (int i = v; i != source; i = edgeTo[i])
             path.push(i);
         return path;
+
     }
 }

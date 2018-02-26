@@ -8,6 +8,8 @@ public interface InterfaceGraph {
     int E();                        //zwraca liczbe krawedzi
 
     void addEdge(int v, int w);      //dodaje do grafu prawedz v-w
-    Bag<Integer> adj(int v);    //zwraca wierzcholki sasiadujace v
+    Bag<Integer> adj(int v);         //zwraca wierzcholki sasiadujace v
     String toString();               //reprezentacja w postaci lancucha znakow
+    int distTo(int v);               //zwraca liczbe krawedzi w najkrotszej sciezce miedzy zrodlem
+                                     //a danym wierzcholkiem
 }
