@@ -2,8 +2,6 @@ package chapter4.Graph;
 
 import Libs.File_lib;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Graph implements InterfaceGraph {
@@ -16,6 +14,14 @@ public class Graph implements InterfaceGraph {
         this.V  = V;
         this.E  = 0;
         //adj     = new ArrayList<Integer>();
+        adj     = new Bag[V];
+        for(int v = 0; v < V; v++)
+            adj[v] = new Bag<Integer>();
+    }
+
+    public Graph(Graph g) {
+        V       = g.V;
+        int E   = g.E;
         adj     = new Bag[V];
         for(int v = 0; v < V; v++)
             adj[v] = new Bag<Integer>();
@@ -58,20 +64,38 @@ public class Graph implements InterfaceGraph {
         return adj[v];
     }
 
+    @Override
+    public boolean hasEdgeTo(int v, int w) {
+        for(int i : adj(v))
+            for (int j : adj(w))
+                if(adj[i] == adj[j])
+                    return true;
+        return false;
+    }
+//
+//    public void test(int v, int w) {
+//        for(int i : adj(v))
+//            for (int j : adj(w))
+//                if(adj[i] == adj[j])
+//                    return true;
+//        return false;
+//    }
+
 
     public static void main(String[] args) {
         File_lib file = new File_lib("./data/tinyG.txt");
         Graph g = new Graph(file.getScanner());
-        Scanner scanner = new Scanner(System.in);
-        int source = scanner.nextInt();
-
-        Testsearch(g, source);
-
-        TestBreadthFirstPaths(g, source);
-
-        TestDeepFisrtPaths(g, source);
-
-        scanner.close();
+        System.out.println(g.hasEdgeTo(5,4));
+//        Scanner scanner = new Scanner(System.in);
+//        int source = scanner.nextInt();
+//
+//        Testsearch(g, source);
+//
+//        TestBreadthFirstPaths(g, source);
+//
+//        TestDeepFisrtPaths(g, source);
+//
+//        scanner.close();
 
 
     }
