@@ -12,6 +12,15 @@ public class Digraph implements IntDigraph {
         for(int v = 0; v < V; v++)
             adj[v] = new Bag<Integer>();
     }
+
+    public Digraph(Digraph g) {
+        this.V  = g.V;
+        this.E  = g.E;
+        adj     = new Bag[g.V];
+        for(int v = 0; v < g.V; v++)
+            adj[v] = new Bag<Integer>();
+
+    }
     @Override
     public int V() {
         return V;
@@ -39,5 +48,13 @@ public class Digraph implements IntDigraph {
             for (int w : adj(v))
                 r.addEdge(w, v);
         return r;
+    }
+    //??
+    public boolean hasEdge(int v, int w) {
+        for(int i : adj(v))
+            for (int j : adj(w))
+                if(adj[i] == adj[j])
+                    return true;
+        return false;
     }
 }

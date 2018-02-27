@@ -22,8 +22,8 @@ public class Graph implements InterfaceGraph {
     public Graph(Graph g) {
         V       = g.V;
         int E   = g.E;
-        adj     = new Bag[V];
-        for(int v = 0; v < V; v++)
+        adj     = new Bag[g.V];
+        for(int v = 0; v < g.V; v++)
             adj[v] = new Bag<Integer>();
     }
 
